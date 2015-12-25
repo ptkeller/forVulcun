@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vulcun Chaos Chat</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+	<link rel="stylesheet" type='text/css' href="style.css" />
+</head>
+<body>
+	<div class="chatBox">
+		<div class="chatArea">
+		</div>
+		<div class="messageInput">
+			<form>
+				<input type="text" id="message"><button>Send</button>
+			</form>
+		</div>	
+	</div>
+	<script>
+	var socket = io();
+	$('form').submit(function(){
+		socket.emit('sending', $('#message').val())
+		$('#message').val('')
+		return false;
+	})
+	socket.on('sent', function(x){
+		$('.chatArea').append($('<li>').text(x));
+		$('.chatArea')[0].scrollTop = $('.chatArea')[0].scrollHeight;
+	})
+	// setInterval(function(){
+	// 	socket.emit('sending', Math.floor(Math.random()*10))
+	// }, 100)
+	</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "vulcunone",
+  "version": "0.0.0",
+  "main": "server/app.js",
+  "dependencies": {
+    "mysql": "^2.6.0",
+    "request": "^2.40.0",
+    "sequelize": "^2.0.0-rc1",
+    "sequelize-cli": "^2.2.1",
+    "sqlite3": "^3.1.1"
+  }
+}

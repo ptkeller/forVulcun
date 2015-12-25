@@ -1,0 +1,10 @@
+.chatArea{
+	text-align: right;
+	height: 500px;
+	width: 30%;
+	border: 2px solid black;
+	border-radius: 3px;
+	overflow: auto;
+	position: relative;
+	bottom: 0;
+}
