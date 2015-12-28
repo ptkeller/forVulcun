@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="chatBox">
-		<div class="chatArea">
+		<div class="chatArea" id="chatArea">
 		</div>
 		<div class="messageInput">
 			<form>
@@ -19,6 +19,8 @@
 	<script>
 	var newUser = prompt('Please tell us your username!', "")
 	var socket = io();
+	var messageWorker = new Worker('paralell.js');
+	messageWorker.postMessage(['work being done']);
 	var sendMessage = function(user, message){
 		socket.emit('sending', user, message)
 	}
