@@ -17,19 +17,20 @@
 		</div>	
 	</div>
 	<script>
+	var newUser = prompt('Please tell us your username!', "")
 	var socket = io();
+	var sendMessage = function(user, message){
+		socket.emit('sending', user, message)
+	}
 	$('form').submit(function(){
-		socket.emit('sending', $('#message').val())
+		sendMessage(newUser, $('#message').val())
 		$('#message').val('')
 		return false;
 	})
-	socket.on('sent', function(x){
-		$('.chatArea').append($('<li>').text(x));
+	socket.on('sent', function(user, message){
+		$('.chatArea').append($('<li class="userInput">').text(user + ":" + message));
 		$('.chatArea')[0].scrollTop = $('.chatArea')[0].scrollHeight;
 	})
-	// setInterval(function(){
-	// 	socket.emit('sending', Math.floor(Math.random()*10))
-	// }, 100)
-	</script>
+		</script>
 </body>
 </html>

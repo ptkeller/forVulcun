@@ -8,3 +8,11 @@
 	position: relative;
 	bottom: 0;
 }
+
+li{
+	list-style-type: none; 
+}
+
+.userInput{
+	font-size: 50px;
+}
