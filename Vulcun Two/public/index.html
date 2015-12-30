@@ -20,7 +20,7 @@
 	var newUser = prompt('Please tell us your username!', "")
 	var socket = io();
 	var messageWorker = new Worker('paralell.js');
-	messageWorker.postMessage(['Begin chat spam']);
+	// messageWorker.postMessage(['Begin chat spam']);
 	var sendMessage = function(user, message){
 		socket.emit('sending', user, message)
 	}
