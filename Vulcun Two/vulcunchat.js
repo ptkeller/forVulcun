@@ -3,8 +3,8 @@ var app = express();
 var port = process.env.PORT || 8100;
 var server = app.listen(port);
 var http = require('http');
-var redis = require('socket.io-redis');
-var cluster = require('cluster');
+// var redis = require('socket.io-redis');
+// var cluster = require('cluster');
 var cpus = require('os').cpus().length;
 var io = require('socket.io').listen(server);
  
